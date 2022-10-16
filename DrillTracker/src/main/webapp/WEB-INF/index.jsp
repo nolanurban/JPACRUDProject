@@ -8,7 +8,14 @@
 <title>Drill Tracker Home</title>
 </head>
 <body> <c:forEach var="shooter" items="${drill}"><ul>
-<li>${shooter.name}</li></ul>
+<li>${shooter.id}</li>
+<li>${shooter.name }</li>
+<li>${shooter.description }</li></ul>
 </c:forEach>
+<c:forEach var="dude" items="${user}"><ul>
+<li>${dude.id}</li>
+<li>${dude.firstName }</li>
+<li>${dude.lastName }</li>
+</c:forEach></ul>
 </body>
 </html>

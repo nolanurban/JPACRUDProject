@@ -15,14 +15,9 @@ public class Drill {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	@Column(name="points_actual")
-	private double pointsActual;
-	@Column(name="hit_factor")
-	private double hitFactor;
-	@Column(name="points_total")
-	private double pointsTotal;
-	private LocalTime time;
-	// needs time
+	@Column(name="max_points")
+	private double maxPoints;
+	private String description;
 	
 	public Drill() { }
 	
@@ -38,38 +33,26 @@ public class Drill {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getPointsActual() {
-		return pointsActual;
-	}
-	public void setPointsActual(double pointsActual) {
-		this.pointsActual = pointsActual;
-	}
-	public double getHitFactor() {
-		return hitFactor;
-	}
-	public void setHitFactor(double hitFactor) {
-		this.hitFactor = hitFactor;
-	}
-	public double getPointsTotal() {
-		return pointsTotal;
-	}
-	public void setPointsTotal(double pointsTotal) {
-		this.pointsTotal = pointsTotal;
-	}
-	
 
-	public LocalTime getTime() {
-		return time;
+	public double getMaxPoints() {
+		return maxPoints;
 	}
 
-	public void setTime(LocalTime time) {
-		this.time = time;
+	public void setMaxPoints(double maxPoints) {
+		this.maxPoints = maxPoints;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	@Override
 	public String toString() {
-		return "Drill [id=" + id + ", name=" + name + ", pointsActual=" + pointsActual + ", hitFactor=" + hitFactor
-				+ ", pointsTotal=" + pointsTotal + "]";
+		return "Drill [id=" + id + ", name=" + name + ", maxPoints=" + maxPoints + ", description=" + description + "]";
 	}
 	
 	
