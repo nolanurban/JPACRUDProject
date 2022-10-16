@@ -7,15 +7,25 @@
 <meta charset="UTF-8">
 <title>Drill Tracker Home</title>
 </head>
-<body> <c:forEach var="shooter" items="${drill}"><ul>
-<li>${shooter.id}</li>
-<li>${shooter.name }</li>
-<li>${shooter.description }</li></ul>
-</c:forEach>
+<body> 
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
 <c:forEach var="dude" items="${user}"><ul>
-<li>${dude.id}</li>
-<li>${dude.firstName }</li>
-<li>${dude.lastName }</li>
+<li>${dude}</li>
+</c:forEach></ul><br>
+<c:forEach var="data" items="${drillData}"><ul>
+<li>${data}</li><br>
 </c:forEach></ul>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
+
+
+
 </body>
 </html>

@@ -59,7 +59,7 @@ DROP TABLE IF EXISTS `drill_data` ;
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `drill_data` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `time` TIME NOT NULL,
+  `time` DECIMAL(4,2) NOT NULL,
   `actual_points` VARCHAR(45) NOT NULL,
   `date` DATE NOT NULL,
   `drill_id1` INT NOT NULL,
@@ -78,6 +78,20 @@ CREATE TABLE IF NOT EXISTS `drill_data` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+SHOW WARNINGS;
+
+-- -----------------------------------------------------
+-- Table `user_1`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `user_1` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `user_1` (
+  `username` VARCHAR(16) NOT NULL,
+  `email` VARCHAR(255) NULL,
+  `password` VARCHAR(32) NOT NULL,
+  `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP);
 
 SHOW WARNINGS;
 SET SQL_MODE = '';
@@ -126,9 +140,10 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `drillsdb`;
-INSERT INTO `drill_data` (`id`, `time`, `actual_points`, `date`, `drill_id1`, `user_id1`) VALUES (1, '3.1', '30', '2022-10-25', 1, 1);
-INSERT INTO `drill_data` (`id`, `time`, `actual_points`, `date`, `drill_id1`, `user_id1`) VALUES (2, '3.8', '30', '2019-09-15', 1, 2);
-INSERT INTO `drill_data` (`id`, `time`, `actual_points`, `date`, `drill_id1`, `user_id1`) VALUES (3, '2.7', '30', '2022-10-14', 1, 3);
+INSERT INTO `drill_data` (`id`, `time`, `actual_points`, `date`, `drill_id1`, `user_id1`) VALUES (1, 3.1, '30', '2022-10-25', 1, 1);
+INSERT INTO `drill_data` (`id`, `time`, `actual_points`, `date`, `drill_id1`, `user_id1`) VALUES (2, 3.8, '30', '2019-09-15', 1, 2);
+INSERT INTO `drill_data` (`id`, `time`, `actual_points`, `date`, `drill_id1`, `user_id1`) VALUES (3, 2.7, '30', '2022-10-14', 1, 3);
+INSERT INTO `drill_data` (`id`, `time`, `actual_points`, `date`, `drill_id1`, `user_id1`) VALUES (4, 3.5, '28', '2022-10-13', 2, 1);
 
 COMMIT;
 

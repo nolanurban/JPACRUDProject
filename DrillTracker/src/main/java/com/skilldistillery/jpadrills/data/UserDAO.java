@@ -7,6 +7,6 @@ import com.skilldistillery.jpadrills.entities.User;
 public interface UserDAO {
 
 	public List<User> findAll();
-	public User getUserByID();
+	public User getUserByID(int id);
 	
 }

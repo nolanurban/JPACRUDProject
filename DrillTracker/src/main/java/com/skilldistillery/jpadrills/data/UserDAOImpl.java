@@ -25,9 +25,13 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User getUserByID() {
-		// TODO Auto-generated method stub
-		return null;
+	public User getUserByID(int id) {
+		String query = "select u.first_name, u.last_name, d.name, dd.actual_points, dd.time "
+				+ "from user u join drill_data dd on u.id = dd.user_id1 "
+				+ "join drill d on drill.id = drill_data.drill_id1";
+		return em.find(User.class, id);
 	}
 
+	
+	
 }

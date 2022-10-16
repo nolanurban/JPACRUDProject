@@ -1,8 +1,11 @@
 package com.skilldistillery.jpadrills.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Transient;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
@@ -19,7 +22,8 @@ public class User {
 	private String email;
 	private char classification;
 	private char division;   // these will probably need to be enums in the future
-
+	@Transient 
+	List<DrillData> data;
 	
 	public User() { }
 	
