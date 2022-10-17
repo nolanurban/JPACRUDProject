@@ -20,6 +20,7 @@ public class User {
 	@Column(name="last_name")
 	private String lastName;
 	private String email;
+	private String password;
 	private char classification;
 	private char division;   // these will probably need to be enums in the future
 	@Transient 
@@ -51,6 +52,15 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public char getClassification() {
 		return classification;
 	}
@@ -62,6 +72,15 @@ public class User {
 	}
 	public void setDivision(char division) {
 		this.division = division;
+	}
+
+	
+	public List<DrillData> getData() {
+		return data;
+	}
+
+	public void setData(List<DrillData> data) {
+		this.data = data;
 	}
 
 	@Override

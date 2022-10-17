@@ -41,4 +41,9 @@ public class DrillDAOImpl implements DrillDAO {
 		return false;
 	}
 
+	@Override
+	public String getDrillByID(int id) {
+		return em.find(Drill.class, id).getName();
+	}
+
 }

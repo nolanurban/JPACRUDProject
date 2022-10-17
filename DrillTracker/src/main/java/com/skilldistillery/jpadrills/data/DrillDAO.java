@@ -10,5 +10,5 @@ public interface DrillDAO {
 	Drill findById(int id);
 	Drill createDrill(Drill drill);
 	boolean deleteDrill();
-	
+	String getDrillByID(int id);
 }

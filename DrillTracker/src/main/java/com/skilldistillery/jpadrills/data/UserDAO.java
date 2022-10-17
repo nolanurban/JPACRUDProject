@@ -2,11 +2,13 @@ package com.skilldistillery.jpadrills.data;
 
 import java.util.List;
 
+import com.skilldistillery.jpadrills.entities.DrillData;
 import com.skilldistillery.jpadrills.entities.User;
 
 public interface UserDAO {
 
-	public List<User> findAll();
-	public User getUserByID(int id);
-	
+	List<User> findAll();
+	User getUserByID(int id);
+	User getUserByEmailAndPassword(String email, String password);
+	List<DrillData> getDrillDataByUserId(int id);
 }
