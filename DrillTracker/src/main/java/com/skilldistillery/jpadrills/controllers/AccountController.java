@@ -32,6 +32,9 @@ public class AccountController {
 	@RequestMapping (path = { "updateData", "updateData.do" })
 	public String updateData (HttpSession session, Model model) {
 		User user = (User)session.getAttribute("account");
+		// user has a list of drilldata which may need updating, I need to figure out how to update a single line within the list
+		//user.getData().get(user.ge).
+		
 		return "account";
 	}
 }

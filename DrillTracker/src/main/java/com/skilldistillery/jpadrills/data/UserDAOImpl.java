@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -59,13 +59,14 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public User getUserByEmailAndPassword(String email, String password) {
 		 String query = "Select s from User s where email = :email and password = :password";
-		 User user = em.createQuery(query, User.class).setParameter("email", email).setParameter("password",password).getSingleResult();
-		 if (user != null) {
+		 try {
+			 User user = em.createQuery(query, User.class).setParameter("email", email).setParameter("password",password).getSingleResult();
 			 user.setData(getDrillDataByUserId(user.getId()));
 			 return user;
+		 } catch(NoResultException e) {
+			 User user = null;
+			 return user;
 		 }
-		 else
-		return null;
 	}
 
 	
