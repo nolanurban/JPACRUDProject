@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.skilldistillery.jpadrills.data.DrillDAO;
 import com.skilldistillery.jpadrills.data.DrillDataDAO;
 import com.skilldistillery.jpadrills.data.UserDAO;
+import com.skilldistillery.jpadrills.entities.User;
 
 @Controller
 public class AccountController {
@@ -28,8 +29,9 @@ public class AccountController {
 		}
 	return "login";
 	}
-	@RequestMapping (path = { "updateDrill" })
+	@RequestMapping (path = { "updateData", "updateData.do" })
 	public String updateData (HttpSession session, Model model) {
+		User user = (User)session.getAttribute("account");
 		return "account";
 	}
 }

@@ -61,7 +61,7 @@
 			<td colspan="2" scope="col" class="text-center"><input type="text" class="form-control"
 								placeholder="${d.date}" aria-label="date"
 								name="drillDate"></td>
-			<td scope="col" class="text-center"><input name="updateData" value="${d}" type="hidden">
+			<td scope="col" class="text-center"><input name="updateData" value="${account.id}" type="hidden">
 								<input type="submit" name="filmId" value="Update"
 								class="btn btn-warning"></td></tr>
 	
